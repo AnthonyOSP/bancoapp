@@ -1,0 +1,34 @@
+@model bancoapp.Models.Contacto
+
+<h2>Contacto</h2>
+
+@using (Html.BeginForm("EnviarMensaje", "Contacto", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AccountType)
+        @Html.TextBoxFor(model => model.AccountType, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.AccountType)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Balance)
+        @Html.TextBoxFor(model => model.Balance, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Balance)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear Usuario</button>
+}
+
+ <h1>@ViewData["Message"]</h1>
