@@ -1,0 +1,23 @@
+@model IEnumerable<bancoapp.Models.Contacto>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Account Type</th>
+            <th>Balance</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.AccountType)</td>
+                <td>@Html.DisplayFor(modelItem => item.Balance)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+            </tr>
+        }
+    </tbody>
+</table>
